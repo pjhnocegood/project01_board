@@ -7,7 +7,7 @@
 header, aside, article, footer, hgroup, menu, nav, section, details, figure, figcaption {display:block;}
 
 /* 폰트 초기화 */
-body, input, textarea, select, button, table {
+body{
 	font-family: "나눔 바른 고딕", "Nanum Barun Gothic", "나눔 고딕", 
 	"Nanum Gothic", "맑은 고딕", "Malgun Gothic", helvetica, sans-serif; 
 	font-size:16px;
@@ -28,3 +28,10 @@ img, fieldset {border:none;}
 
 /* 블라인드 효과 */
 .blind {width:0; height:0; left:0; top:0; font-size:0; line-height:0; overflow:hidden; position:absolute; }
+
+/* td간격 없앰*/
+table{border-collapse:collapse;}
+address{font-style:normal;}
+caption{display:none;}
+input[type=button], input[type=image], button{cursor:pointer;}
+input[type=text]::-ms-clear {display:none;}

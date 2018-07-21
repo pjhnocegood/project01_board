@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,20 +9,22 @@
 <!-- style & font -->
 <link rel="stylesheet" href="./css/reset.css">
 <style type="text/css">
-#wrap{width:1400px; margin:0 auto; border:1px solid red;}
-header{width:100%; height:100px; line-height:100px; text-align:center; border:1px solid orange;}
+#wrap{min-width:1400px; margin:0 auto;}
+header{height:100px; line-height:100px; text-align:center;}
 
-nav{width:100%; height:50px; line-height:50px; text-align:center; border:1px solid yellow;}
-nav .nav_inner li{width:25%; display:inline-block; border:1px solid #333; box-sizing: border-box; moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
-nav .nav_inner a{width: 100%; display: block;}
+nav{height:50px; line-height:50px; text-align:center;}
+nav .nav_inner{width:1400px; margin:0 auto;}
+nav .nav_inner li{width:25%; display:inline-block; border:1px solid #f1efef; border-bottom:0; border-right:0; box-sizing: border-box; moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
+nav .nav_inner .r1{border-right:1px solid #f1efef;}
+nav .nav_inner a{width: 100%; display: block; color:#4d6065;}
 
-section{width:100%; border:1px solid blue;}
-section .sect_inner{width:1000px; margin:0 auto; margin-top:20px; margin-bottom:20px;}
-section .sect_inner .board_BAE{height:300px; background-color:skyblue;}
-section .sect_inner .board_KIM{height:300px; background-color:pink; margin-top:20px;}
-section .sect_inner .board_PARK{height:300px; background-color:orange; margin-top:20px;}
+section{}
+section .sect_inner{width:1400px; margin:0 auto; padding:30px 0 30px 0; border:1px solid #f1efef; box-sizing: border-box; moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
+section .sect_inner .board_BAE{width:1300px; margin:0 auto;}
+section .sect_inner .board_KIM{width:1300px; height:300px; margin:0 auto; background-color:pink; margin-top:20px;}
+section .sect_inner .board_PARK{width:1300px; height:300px; margin:0 auto; background-color:orange; margin-top:20px;}
 
-footer{width:100%; height:50px; line-height:50px; text-align:center; background-color:#ececec; border:1px solid navy;}
+footer{height:50px; line-height:50px; text-align:center; background-color:#ececec; margin-top:40px;}
 footer em{font-style: normal; font-size:14px;}
 </style>
 </head>
@@ -35,7 +36,7 @@ footer em{font-style: normal; font-size:14px;}
 	<nav>
 		<div class="nav_inner">
 			<ul>
-				<li><a href="#">전체</a></li><li><a href="#">기열 게시판</a></li><li><a href="#">민기 게시판</a></li><li><a href="#">진환 게시판</a></li>
+				<li><a href="#" style="background-color:#00b0d9; color:#fff;">전체</a></li><li><a href="#">기열 게시판</a></li><li><a href="#">민기 게시판</a></li><li class="r1"><a href="#">진환 게시판</a></li>
 			</ul>
 		</div>
 	</nav>
