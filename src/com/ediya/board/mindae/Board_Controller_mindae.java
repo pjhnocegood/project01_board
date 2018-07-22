@@ -24,6 +24,8 @@ public class Board_Controller_mindae extends HttpServlet {
 		
 		req.setCharacterEncoding("UTF-8");
 		
+		
+		
 	}
 	
 	

@@ -47,7 +47,7 @@ footer em{font-style: normal; font-size:14px;}
 			</div>
 			
 			<div class="board_KIM">
-				민기 게시판
+				<jsp:include page="board_kim.jsp" />
 			</div>
 			
 			<div class="board_PARK">

@@ -13,6 +13,7 @@ public class Member_DTO_mindae {
 	private String userSex_kmk; //성별
 	private String userDate_kmk; //가입일
 	private int userAdminNo_kmk; //관리자 권환
+	
 	public int getUserNo_kmk() {
 		return userNo_kmk;
 	}
