@@ -4,10 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
 import com.ediya.board.member.common.DBCP;
+import com.ediya.board.member.park.member.dto.Board_DTO;
 
 public class TestDAO {
 	
@@ -54,6 +57,49 @@ public class TestDAO {
 				
 			}
 		}
+
+    }
+    
+    public List<Board_DTO> select(){
+    	conn = DBCP.getConnection();
+        
+        String sql = null;
+        
+        sql="select*from ajax_rf";
+        
+        List<Board_DTO> list = new ArrayList<Board_DTO>();
+        
+        
+        try {
+        	pstmt = conn.prepareStatement(sql);
+			  rs = pstmt.executeQuery();
+
+        	 while (rs.next()) {
+                 
+        		 Board_DTO dto = new Board_DTO();
+              
+                 dto.setRf_name(rs.getString("rf_name"));
+               
+                 list.add(dto);
+               
+              }
+        	 
+			
+			  
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				
+			}
+		}
+		return list;
 
     }
     
