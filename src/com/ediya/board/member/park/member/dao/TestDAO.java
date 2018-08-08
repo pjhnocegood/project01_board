@@ -35,8 +35,12 @@ public class TestDAO {
         
         sql=" insert into ajax_rf(rf_name,rf_content,board_num) values('1','1',1)";
         
+     
+        
         try {
 			pstmt = conn.prepareStatement(sql);
+			  int result = pstmt.executeUpdate();
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
