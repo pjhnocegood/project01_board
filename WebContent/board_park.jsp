@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%
-	request.setCharacterEncoding("utf-8");
-	String cp = request.getContextPath();
-%>
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -49,13 +47,18 @@
 			</dl>
 		</div>
 		<div id="lists">
-			<dl>
-				<dd class="num">1</dd>
-				<dd class="subject">스타일 맞추기 힘들다......</dd>
-				<dd class="name">김아무개</dd>
-				<dd class="created">00/10/10</dd>
-				<dd class="hitCount">10</dd>
-			</dl>
+			
+			
+			
+			<c:forEach var="item" items="${board_list}">
+					<dl>
+				<dd class="num">${item.board_num}</dd>
+				<dd class="subject">${item.board_subject}</dd>
+				<dd class="name">${item.board_writer}</dd>
+				<dd class="created">${item.board_dt}</dd>
+				<dd class="hitCount">${item.board_view}</dd>
+					</dl>
+					</c:forEach>
 
 		</div>
 		<div id="footer">

@@ -65,7 +65,7 @@ public class TestDAO {
         
         String sql = null;
         
-        sql="select*from ajax_rf";
+        sql="select*from BOARD";
         
         List<Board_DTO> list = new ArrayList<Board_DTO>();
         
@@ -77,10 +77,13 @@ public class TestDAO {
         	 while (rs.next()) {
                  
         		 Board_DTO dto = new Board_DTO();
-              
-                 dto.setRf_name(rs.getString("rf_name"));
-               
-                 list.add(dto);
+        		 dto.setBoard_num(rs.getInt("board_num"));
+        		 dto.setBoard_subject(rs.getString("board_subject"));
+        		 dto.setBoard_writer(rs.getString("board_writer"));
+                 dto.setBoard_view(rs.getInt("board_view"));
+        		 dto.setBoard_sub(rs.getInt("board_sub"));
+                 dto.setBoard_dt(rs.getDate("board_dt"));
+        		 list.add(dto);
                
               }
         	 

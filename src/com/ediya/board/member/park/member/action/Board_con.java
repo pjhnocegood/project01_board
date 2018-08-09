@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,23 +18,12 @@ import com.ediya.board.member.park.member.dto.Board_DTO;
  * Servlet implementation class RankingListCon
  */
 @WebServlet("/RankingListCon.do")
-public class RankingListCon extends HttpServlet {
+public class Board_con extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("서블렛 테스트");
-		TestDAO dao =new TestDAO();
+		doPre(request,response);
 		
-		
-		dao.insert();
-		 List<Board_DTO> list =dao.select();
-		
-		 for (int i = 0; i < list.size(); i++) {
-			 Board_DTO dto=new Board_DTO();
-			 dto=list.get(i);
-			 System.out.println(dto.getRf_name());
-			 
-				
-		}
+	
 		 
 		
 	}
@@ -41,6 +31,29 @@ public class RankingListCon extends HttpServlet {
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		doPre(request,response);
+		
 	}
+	
+	
+	protected void doPre(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		
+		System.out.println("서블렛 테스트");
+		TestDAO dao =new TestDAO();
+		
+		
+		 List<Board_DTO> list =dao.select();
+		
+		
+		
+		 request.setAttribute("board_list", list);
+		 
+		 
+		 RequestDispatcher dis = request.getRequestDispatcher("./board_park.jsp");
+		dis.forward(request,response);
+		 
+	}
+	
 }
