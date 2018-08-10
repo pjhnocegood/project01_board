@@ -1,4 +1,4 @@
-package com.ediya.board.member.common;
+package com.ediya.board.common.dbcp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

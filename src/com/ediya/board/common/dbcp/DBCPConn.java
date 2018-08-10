@@ -1,4 +1,4 @@
-package com.ediya.board.member.common;
+package com.ediya.board.common.dbcp;
 
 import java.sql.Connection;
 
@@ -15,10 +15,10 @@ public class DBCPConn {
 		if (conn == null) {
 
 			try {
-				// ÀÌ¸§°ú °´Ã¼(µðºñ¿¬°á) ¹ÙÀÎµù
+				// ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼(ï¿½ï¿½ñ¿¬°ï¿½) ï¿½ï¿½ï¿½Îµï¿½
 				Context ctx = new InitialContext();
 
-				// web.xml¿¡¼­ È¯°æ¼³Á¤ ºÒ·¯¿À±â
+				// web.xmlï¿½ï¿½ï¿½ï¿½ È¯ï¿½æ¼³ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
 				Context evt = (Context) ctx.lookup("java:/comp/env");
 
 				DataSource ds = (DataSource) evt.lookup("jdbc/mysql");

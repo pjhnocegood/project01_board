@@ -9,7 +9,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import com.ediya.board.member.common.DBCP;
+import com.ediya.board.common.dbcp.DBCP;
 import com.ediya.board.member.park.member.dto.Board_DTO;
 
 public class TestDAO {
