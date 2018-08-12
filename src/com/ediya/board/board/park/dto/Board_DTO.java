@@ -1,4 +1,4 @@
-package com.ediya.board.member.park.member.dto;
+package com.ediya.board.board.park.dto;
 
 import java.sql.Date;
 

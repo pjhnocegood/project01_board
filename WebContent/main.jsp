@@ -36,7 +36,7 @@ footer em{font-style: normal; font-size:14px;}
 	<nav>
 		<div class="nav_inner">
 			<ul>
-				<li><a href="#" style="background-color:#00b0d9; color:#fff;">전체</a></li><li><a href="#">기열 게시판</a></li><li><a href="#">민기 게시판</a></li><li class="r1"><a href="./board_list_park.do">진환 게시판</a></li>
+				<li><a href="#" style="background-color:#00b0d9; color:#fff;">전체</a></li><li><a href="#">기열 게시판</a></li><li><a href="#">민기 게시판</a></li><li class="r1"><a href="./board_list_park.do?select_page=1">진환 게시판</a></li>
 			</ul>
 		</div>
 	</nav>

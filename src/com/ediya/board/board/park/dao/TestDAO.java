@@ -1,4 +1,4 @@
-package com.ediya.board.member.park.member.dao;
+package com.ediya.board.board.park.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import com.ediya.board.board.park.dto.Board_DTO;
 import com.ediya.board.common.dbcp.DBCP;
-import com.ediya.board.member.park.member.dto.Board_DTO;
 
 public class TestDAO {
 	
@@ -60,12 +60,15 @@ public class TestDAO {
 
     }
     
-    public List<Board_DTO> select(){
+    public List<Board_DTO> select(int select_page){
     	conn = DBCP.getConnection();
         
         String sql = null;
         
-        sql="select*from BOARD";
+        sql="select @ROWNUM := @ROWNUM + 1 as rnum, b.*\r\n" + 
+        		"from board b, (select @ROWNUM := 0) A\r\n" + 
+        		"order by board_num\r\n" + 
+        		"limit  "+(select_page*10)+", 10;";
         
         List<Board_DTO> list = new ArrayList<Board_DTO>();
         

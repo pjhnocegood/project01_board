@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>게시판</title> 
-<link rel="stylesheet" href="./css/kmk_style.css" type="text/css"/>
-<link rel="stylesheet" href="./css/kmk_list.css" type="text/css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/kmk_style.css" type="text/css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/kmk_list.css" type="text/css"/>
 
 </head>
 <body>
@@ -55,8 +55,9 @@
 				<dd class="num">${item.board_num}</dd>
 				<dd class="subject">${item.board_subject}</dd>
 				<dd class="name">${item.board_writer}</dd>
-				<dd class="created">${item.board_dt}</dd>
-				<dd class="hitCount">${item.board_view}</dd>
+				<dd class="created">${item.board_dt}</dd>		
+			 	<dd class="hitCount">${item.board_view}</dd>
+			 		
 					</dl>
 					</c:forEach>
 

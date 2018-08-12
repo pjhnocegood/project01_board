@@ -1,6 +1,6 @@
-package com.ediya.board.member.park.member.action;
+package com.ediya.board.board.park.action;
 
-import com.ediya.board.member.park.member.dao.TestDAO;
+import com.ediya.board.board.park.dao.TestDAO;
 
 public class Member_controller {
 
