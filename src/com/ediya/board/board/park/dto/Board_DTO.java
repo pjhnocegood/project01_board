@@ -7,6 +7,8 @@ public class Board_DTO {
 int board_num;
 String board_subject;
 String board_writer;
+String board_email;
+String board_pass;
 String board_content;
 int board_like;
 int board_view;
@@ -16,6 +18,18 @@ Date board_dt;
 
 
 
+public String getBoard_email() {
+	return board_email;
+}
+public void setBoard_email(String board_email) {
+	this.board_email = board_email;
+}
+public String getBoard_pass() {
+	return board_pass;
+}
+public void setBoard_pass(String board_pass) {
+	this.board_pass = board_pass;
+}
 public int getBoard_like() {
 	return board_like;
 }

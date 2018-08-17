@@ -20,7 +20,7 @@ import com.ediya.board.board.park.service.inter.BoardServiceInter;
  * Servlet implementation class RankingListCon
  */
 @WebServlet("/board_list_park.do")
-public class Board_con extends HttpServlet {
+public class Board_list_con extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPre(request,response);
@@ -40,7 +40,7 @@ public class Board_con extends HttpServlet {
 	
 	protected void doPre(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		BoardService boardservice= new BoardService();
+		BoardServiceInter boardservice= new BoardService();
 		boardservice.board_list(request,response);
 		RequestDispatcher dis = request.getRequestDispatcher("./board_park.jsp");
 		dis.forward(request,response);

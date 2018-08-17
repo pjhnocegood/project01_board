@@ -33,7 +33,7 @@
 		  </form>
 		</div>
 		<div id="rightHeader">
-			<input type="button" value=" 글올리기 " class="btn2" onclick=""/>
+			<input type="button" value=" 글올리기 " class="btn2" onclick="board_write();"/>
 		</div>
 	</div>
 	<div id="bbsList_list">
@@ -53,7 +53,10 @@
 			<c:forEach var="item" items="${board_list}">
 					<dl>
 				<dd class="num">${item.board_num}</dd>
-				<dd class="subject">${item.board_subject}</dd>
+				<dd  class="subject">
+				<a href="./board_content_park.do?board_num=${item.board_num}">
+				${item.board_subject}
+				</a></dd>
 				<dd class="name">${item.board_writer}</dd>
 				<dd class="created">${item.board_dt}</dd>		
 			 	<dd class="hitCount">${item.board_view}</dd>
@@ -72,4 +75,11 @@
 </div>
 
 </body>
+<script type="text/javascript">
+function board_write(){
+	location.href='./board_write_park.do';
+}
+
+</script>
+
 </html>
