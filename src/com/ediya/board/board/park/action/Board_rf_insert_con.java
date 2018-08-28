@@ -19,8 +19,8 @@ import com.ediya.board.board.park.service.inter.BoardServiceInter;
 /**
  * Servlet implementation class RankingListCon
  */
-@WebServlet("/board_update_start_park.do")
-public class Board_update_start_con extends HttpServlet {
+@WebServlet("/board_rf_insert_park.do")
+public class Board_rf_insert_con extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPre(request,response);
@@ -41,8 +41,7 @@ public class Board_update_start_con extends HttpServlet {
 	protected void doPre(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		BoardServiceInter boardservice= new BoardService();
-		boardservice.board_update_start(request,response);
-		response.sendRedirect("./board_list_park.do");
+		boardservice.board_rf_insert(request,response);
 		
 		
 		 

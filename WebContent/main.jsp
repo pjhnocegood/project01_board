@@ -51,7 +51,7 @@ footer em{font-style: normal; font-size:14px;}
 			</div>
 			
 			<div class="board_PARK">
-				<jsp:include page="board_park.jsp" />
+				
 			</div>
 		</div>
 	</section>

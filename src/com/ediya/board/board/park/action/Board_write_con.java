@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ediya.board.board.park.dao.TestDAO;
+import com.ediya.board.board.park.dao.BoardDAO;
 import com.ediya.board.board.park.dto.Board_DTO;
 import com.ediya.board.board.park.service.BoardService;
 import com.ediya.board.board.park.service.inter.BoardServiceInter;
@@ -42,7 +42,7 @@ public class Board_write_con extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		BoardServiceInter boardservice= new BoardService();
 		
-		RequestDispatcher dis = request.getRequestDispatcher("./board_write_park.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("./board/park/board_write_park.jsp");
 		dis.forward(request,response);
 		
 		 

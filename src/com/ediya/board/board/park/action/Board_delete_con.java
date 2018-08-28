@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ediya.board.board.park.dao.TestDAO;
+import com.ediya.board.board.park.dao.BoardDAO;
 import com.ediya.board.board.park.dto.Board_DTO;
 import com.ediya.board.board.park.service.BoardService;
 import com.ediya.board.board.park.service.inter.BoardServiceInter;

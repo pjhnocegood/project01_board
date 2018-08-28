@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>게시판</title> 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/kmk_style.css" type="text/css"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/kmk_list.css" type="text/css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/board/park/css/kmk_style.css" type="text/css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/board/park/css/kmk_list.css" type="text/css"/>
 
 </head>
 <body>

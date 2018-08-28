@@ -15,9 +15,46 @@ int board_view;
 int board_sub;
 Date board_dt;
 
+String rf_content;
+String rf_writer;
+String rf_pass;
+String rf_dt;
+int rf_num;
 
 
 
+
+
+public int getRf_num() {
+	return rf_num;
+}
+public void setRf_num(int rf_num) {
+	this.rf_num = rf_num;
+}
+public String getRf_writer() {
+	return rf_writer;
+}
+public void setRf_writer(String rf_writer) {
+	this.rf_writer = rf_writer;
+}
+public String getRf_pass() {
+	return rf_pass;
+}
+public void setRf_pass(String rf_pass) {
+	this.rf_pass = rf_pass;
+}
+public String getRf_dt() {
+	return rf_dt;
+}
+public void setRf_dt(String rf_dt) {
+	this.rf_dt = rf_dt;
+}
+public String getRf_content() {
+	return rf_content;
+}
+public void setRf_content(String rf_content) {
+	this.rf_content = rf_content;
+}
 public String getBoard_email() {
 	return board_email;
 }
@@ -78,7 +115,5 @@ public Date getBoard_dt() {
 public void setBoard_dt(Date board_dt) {
 	this.board_dt = board_dt;
 }
-	
-	
-	
+		
 }

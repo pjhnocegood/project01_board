@@ -71,6 +71,7 @@
 #bbsList_list .name {width:90px;}
 #bbsList_list .created {width:65px;}
 #bbsList_list .hitCount {width:60px;}
+#bbsList_list .board_dt {width:120px;}
 
 #bbsList_list #lists {
 	clear:both;
