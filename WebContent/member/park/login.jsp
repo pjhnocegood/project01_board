@@ -12,27 +12,9 @@
 <link rel="stylesheet"
 	href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css"
 	type="text/css">
-<script src="<%=request.getContextPath()%>/js/jquery-3.2.1.js"
-	type="text/javascript"></script>
-<script type="text/javascript">
-	function check() {
-		var id = loginForm.user_id.value;
-		var pass = loginForm.user_pw.value;
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
-		if (id.length == 0) {
-			alert("아이디를 입력하세요.");
-			loginForm.user_id.focus();
-			return false;
-		}
-		if (pass.length == 0) {
-			alert("비밀번호를 입력하세요.");
-			loginForm.user_pw.focus();
-			return false;
-		}
 
-		return true;
-	}
-</script>
 </head>
 
 <body>
@@ -48,18 +30,18 @@
 					<div class="card text-white p-5 bg-dark">
 						<div class="card-body bg-dark">
 							<h1 class="mb-4 text-center">Login</h1>
-							<form action="./loginCheckt.uo" name="loginForm" method="post"
-								class="text-center" onsubmit="return check()">
+							<form  name="loginForm"  method="post"
+								class="text-center"  id="loginForm">
 								<div class="form-group text-left">
 									<label>아이디</label> <input type="text" class="form-control"
-										name="user_id" placeholder="Enter ID">
+										name="member_id" placeholder="Enter ID" id="user_id">
 								</div>
 								<div class="form-group text-left">
 									<label>비밀번호</label> <input type="password" class="form-control"
-										name="user_pw" placeholder="Password">
+										name="member_pass" placeholder="Password">
 								</div>
 								<br>
-								<button type="submit" class="btn btn-primary btn-block">로그인</button>
+								<button type="button" class="btn btn-primary btn-block" onclick="check()">로그인</button>
 							</form>
 							<br> <a class="btn btn-primary btn-block"
 								href="./register.do">회원가입 </a>
@@ -72,9 +54,7 @@
 		<br><br><br><br><br>	
 	</div>
 	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
+	
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
 		integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
@@ -84,5 +64,53 @@
 		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
 		crossorigin="anonymous"></script>
 </body>
+<script type="text/javascript">
+	function check() {
+		var id = loginForm.member_id.value;
+		var pass = loginForm.member_pass.value;
+	
+		if (id.length == 0) {
+			alert("아이디를 입력하세요.");
+			loginForm.member_id.focus();
+			return false;
+		}
+		if (pass.length == 0) {
+			alert("비밀번호를 입력하세요.");
+			loginForm.member_pass.focus();
+			return false;
+		}
+	
+	
+		$.ajax(
+				{
+					url : "./login_check.do",
+	                data: $('#loginForm').serializeArray(),
+					type: 'Post',
+					dataType : 'text',
+					success : function(result) {
+						
+						
+					
+						if(result==0){
+							alert('아이디와 비밀번호가 일치하지 않습니다.')
+							return false;
+						}else{
+							location.href='./././board_list_park.do';
+								
+						}
+						
+						
+						
+					},
+					error : function() {
+						alert('통신실패');
+					}
+				})
+		
+		
+		
+	}
+	
 
+</script>
 </html>

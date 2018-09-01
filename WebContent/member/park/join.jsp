@@ -183,7 +183,7 @@ pre {
                                              <%-- <form:input path="mbEmail"/> 
                                               <form:errors path="mbEmail"/> --%>
                                               
-             <input type="text" name="mbEmail" id="mbEmail" value="">
+             <input type="text" name="member_email" id="member_email" value="">
             <span id="emailMsg" class="error"></span>
                                              </label>
                                           </div>
@@ -241,11 +241,19 @@ pre {
                                                     <label class="input">
                                                         <i class="icon-append fa fa-phone"></i>
                                                         
-                                                  <!--   <input type="text" name="mbPhone" id="mbPhone"   > -->
-                                            <%-- <form:input path="mbPhone" />
-                                       <form:errors path="mbPhone"/>  --%>
+                                                 
             <input type="text" name="member_phon" id="member_phon" value="">
-            <span id="phoneMsg" class="error"></span>
+          
+                                                    </label>
+                                                </section>
+                                                <section class="col-xs-6">
+                                                    <label class="label">Birth</label>
+                                                    <label class="input">
+                                                        <i class="icon-append fa fa-phone"></i>
+                                                        
+                                                 
+            <input type="date" name="member_birth" id="member_birth" value="">
+          
                                                     </label>
                                                 </section>
                                  </div>
@@ -272,28 +280,19 @@ pre {
                               <fieldset>
 
                                  <div class="row">
-                                    <label class="label" style="margin-left: 17px;">Address</label>
+                                    <label class="label" style="margin-left: 17px;">Post</label>
+                                     <section class="col-xs-3"> <label for="file"
+                                       class="input"> <input  name="member_post" id="member_post"
+                                       placeholder="Post" value=""><span id="zipMsg" class="error"></span>
+                                    </label> </section> 
+
+
+						 <label class="label" style="margin-left: 17px;">Address</label>
                                      <section class="col-xs-3"> <label for="file"
                                        class="input"> <input  name="member_address" id="member_address"
                                        placeholder="Address" value=""><span id="zipMsg" class="error"></span>
-                                    </label> </section> 
+                                    </label> </section>
 
-                                 <!--    <section class="col-md-4 col-xs-offset-0"> <a 
-                                       href="#" class="btn btn-b-base" >우편번호</a> </section> -->
-                                       
-                                       
-                                 <!-- <button onclick="sample6_execDaumPostcode()" id="postBtn" class="btn btn-b-base" value="우편번호">우편번호</button> -->
-                                 
-                              <!--    <span onclick="sample6_execDaumPostcode()">우편번호</span> -->
-                              <%--    <form:errors path="mbAddr1"/> --%>
-            
-                                                
-
-                                    <!--    <input type="text" id="sample6_postcode" placeholder="우편번호"> -->
-<!-- <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br> -->
-<!-- <input type="text" id="sample6_address" placeholder="주소">
-<input type="text" id="sample6_address2" placeholder="상세주소"> -->
-                                       
                                  </div>
                                 
                                  <span id="addrMsg" class="error"></span>
@@ -365,13 +364,15 @@ pre {
  	function member_insert(){
  		
  		
- 		
  		 if($('#agree').is(":checked")==false){
  			 alert('인증이 되지 않았습니다.')
  			 
  			 return false;
  		 }else  if($('#member_id').val()==""){
  			 alert('ID를 입력해주세요.')
+ 			 return false;
+ 		 }else  if($('#member_email').val()==""){
+ 			 alert('Email을 입력해주세요.')
  			 return false;
  		 }else if($('#member_pass').val()==""){
  			 alert('비번을 입력해주세요.')
@@ -390,6 +391,27 @@ pre {
  			 return false;
  		 }
  		
+ 		 
+ 		$.ajax(
+				{
+					url : "./insert.do",
+	                data: $('#member_form').serializeArray(),
+					type: 'Post',
+					dataType : 'text',
+					success : function(result) {
+						
+						
+					
+						
+						
+					alert('통신성공');
+						
+						
+					},
+					error : function() {
+						alert('통신실패');
+					}
+				})
  	}
    
 

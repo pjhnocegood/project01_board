@@ -31,34 +31,7 @@ public class BoardDAO {
 	}
 	
 	
-    public void insert(){
-    	conn = DBCP.getConnection();
-        
-        String sql = null;
-        
-        sql=" insert into ajax_rf(rf_name,rf_content,board_num) values('1','1',1)";
-        
-     
-        
-        try {
-			pstmt = conn.prepareStatement(sql);
-			  int result = pstmt.executeUpdate();
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			try {
-				if (pstmt != null)
-					pstmt.close();
-				if (conn != null)
-					conn.close();
-			} catch (Exception e) {
-				
-			}
-		}
-
-    }
+    
     
     public List<Board_DTO> select(int select_page){
     	conn = DBCP.getConnection();
@@ -70,8 +43,8 @@ public class BoardDAO {
         System.out.println("end_page3="+end_page);
         
         sql="select @ROWNUM := @ROWNUM + 1 as rnum, b.*\r\n" + 
-        		"from board b, (select @ROWNUM := 0) A\r\n" + 
-        		"order by board_num desc \r\n" + 
+        		"from board_park b, (select @ROWNUM := 0) A\r\n" + 
+        		"order by boardNo_park desc \r\n" + 
         		"limit  "+start_page+", "+end_page+";";
         
         List<Board_DTO> list = new ArrayList<Board_DTO>();
@@ -84,11 +57,11 @@ public class BoardDAO {
         	 while (rs.next()) {
                  
         		 Board_DTO dto = new Board_DTO();
-        		 dto.setBoard_num(rs.getInt("board_num"));
-        		 dto.setBoard_subject(rs.getString("board_subject"));
-        		 dto.setBoard_writer(rs.getString("board_writer"));
-                 dto.setBoard_view(rs.getInt("board_view"));
-                 dto.setBoard_dt(rs.getDate("board_dt"));
+        		 dto.setBoard_num(rs.getInt("boardNo_park"));
+        		 dto.setBoard_subject(rs.getString("boardSubject_park"));
+        		 dto.setBoard_writer(rs.getString("userId_park"));
+                 dto.setBoard_dt(rs.getDate("boardDate_park"));
+                 dto.setBoard_view(rs.getInt("boardCount_park"));
         		 list.add(dto);
         		 
               }
@@ -117,18 +90,17 @@ conn = DBCP.getConnection();
         
         String sql = null;
         
-        sql=" insert into BOARD(board_subject,board_writer,board_email,board_content,board_pass,"
-        		+ "board_view,board_like,board_dt) values(?,?,?,?,?,0,0,now())";
+        sql=" insert into board_park(boardSubject_park,boardContent_park,userId_park,userEmail_park,boardDate_park,"
+        		+ "boardCount_park) values(?,?,?,?,now(),0)";
         
      
         
         try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getBoard_subject());
-			pstmt.setString(2, dto.getBoard_writer());
-			pstmt.setString(3, dto.getBoard_email());
-			pstmt.setString(4, dto.getBoard_content());
-			pstmt.setString(5, dto.getBoard_pass());
+			pstmt.setString(2, dto.getBoard_content());
+			pstmt.setString(3, dto.getBoard_writer());
+			pstmt.setString(4, dto.getBoard_email());
 			
 			
 			  int result = pstmt.executeUpdate();
@@ -155,7 +127,7 @@ conn = DBCP.getConnection();
         String sql = null;
         
         
-        sql="SELECT *FROM BOARD WHERE board_num=?";
+        sql="SELECT *FROM board_park WHERE boardNo_park=?";
         
         
         Board_DTO dto = new Board_DTO();
@@ -167,14 +139,13 @@ conn = DBCP.getConnection();
 
         	 while (rs.next()) {
                  
-        		 dto.setBoard_num(rs.getInt("board_num"));
-        		 dto.setBoard_subject(rs.getString("board_subject"));
-        		 dto.setBoard_writer(rs.getString("board_writer"));
-                 dto.setBoard_view(rs.getInt("board_view"));
-                 dto.setBoard_content(rs.getString("board_content"));
-                 dto.setBoard_email(rs.getString("board_email"));
-                 dto.setBoard_like(rs.getInt("board_like"));
-                 dto.setBoard_dt(rs.getDate("board_dt"));
+        		 dto.setBoard_num(rs.getInt("boardNo_park"));
+        		 dto.setBoard_subject(rs.getString("boardSubject_park"));
+        		 dto.setBoard_writer(rs.getString("userId_park"));
+                 dto.setBoard_view(rs.getInt("boardCount_park"));
+                 dto.setBoard_content(rs.getString("boardContent_park"));
+                 dto.setBoard_email(rs.getString("userEmail_park"));
+                 dto.setBoard_dt(rs.getDate("boardDate_park"));
         		
               }
         	 
@@ -201,7 +172,7 @@ conn = DBCP.getConnection();
         String sql = null;
         
         
-        sql="DELETE FROM BOARD WHERE board_num=?";
+        sql="DELETE FROM board_park WHERE boardNo_park=?";
         
         
         Board_DTO dto = new Board_DTO();
@@ -235,7 +206,7 @@ conn = DBCP.getConnection();
         String sql = null;
         
         
-        sql=" UPDATE BOARD SET board_subject=?,board_content=? WHERE board_num=?;";
+        sql=" UPDATE board_park SET boardSubject_park=?,boardContent_park=? WHERE boardNo_park=?;";
         
         
         
@@ -272,7 +243,7 @@ conn = DBCP.getConnection();
         String sql = null;
         int total_num=0;
         
-        sql="SELECT COUNT(board_num) total_num FROM BOARD";
+        sql="SELECT COUNT(boardNo_park) total_num FROM board_park";
         
         
         Board_DTO dto = new Board_DTO();

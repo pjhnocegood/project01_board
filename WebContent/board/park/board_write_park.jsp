@@ -64,19 +64,12 @@
 			</dl>
 		</div>
 
-		<div class="bbsCreated_noLine">
-			<dl>
-				<dt>패스워드</dt>
-				<dd>
-				      <input type="password" name="board_pass" size="35" maxlength="7" class="boxTF" />&nbsp;(게시물 수정 및 삭제시 필요 !!!)
-				</dd>
-			</dl>
-		</div>
+		
 	</div>
 
 	<div id="bbsCreated_footer">
         <input type="button" value=" 등록하기 " class="btn2" onclick="board_insert()"/>
-        <input type="button" value=" 작성취소 " class="btn2" onclick=""/>
+        <input type="button" value=" 작성취소 " class="btn2" onclick="location.href='./board_list_park.do'"/>
 	</div>
 
     </form>

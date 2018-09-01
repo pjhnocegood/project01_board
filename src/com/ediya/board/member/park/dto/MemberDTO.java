@@ -8,8 +8,32 @@ public class MemberDTO {
 	String member_phon;
 	String member_sex;
 	String member_address;
+	String member_post;
+	String member_email;
+	String member_birth;
 	
 	
+	
+	
+	
+	public String getMember_email() {
+		return member_email;
+	}
+	public void setMember_email(String member_email) {
+		this.member_email = member_email;
+	}
+	public String getMember_birth() {
+		return member_birth;
+	}
+	public void setMember_birth(String member_birth) {
+		this.member_birth = member_birth;
+	}
+	public String getMember_post() {
+		return member_post;
+	}
+	public void setMember_post(String member_post) {
+		this.member_post = member_post;
+	}
 	public int getMember_num() {
 		return member_num;
 	}
