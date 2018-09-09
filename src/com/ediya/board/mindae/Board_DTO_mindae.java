@@ -3,7 +3,7 @@ package com.ediya.board.mindae;
 public class Board_DTO_mindae {
 	
 	private int boardNo_kmk; //게시판번호
-	private String boardDubject_kmk; //글제목
+	private String boardSubject_kmk; //글제목
 	private String boardContent_kmk; //글내용
 	private String userId_kmk; //아이디
 	private String userEmail_kmk; //이메일
@@ -16,11 +16,11 @@ public class Board_DTO_mindae {
 	public void setBoardNo_kmk(int boardNo_kmk) {
 		this.boardNo_kmk = boardNo_kmk;
 	}
-	public String getBoardDubject_kmk() {
-		return boardDubject_kmk;
+	public String getBoardSubject_kmk() {
+		return boardSubject_kmk;
 	}
-	public void setBoardDubject_kmk(String boardDubject_kmk) {
-		this.boardDubject_kmk = boardDubject_kmk;
+	public void setBoardDubject_kmk(String boardSubject_kmk) {
+		this.boardSubject_kmk = boardSubject_kmk;
 	}
 	public String getBoardContent_kmk() {
 		return boardContent_kmk;

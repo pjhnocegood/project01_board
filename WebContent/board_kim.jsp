@@ -35,7 +35,7 @@
 		  </form>
 		</div>
 		<div id="rightHeader">
-			<input type="button" value=" 글올리기 " class="btn2" onclick=""/>
+			<input type="button" value=" 글올리기 " class="btn2" onclick="</created_kim"/>
 		</div>
 	</div>
 	<div id="bbsList_list">
