@@ -9,7 +9,7 @@ public class DBConn {
 
 	public static Connection getConnection() {
 
-		String url = "jdbc:mysql://localhost:3306:board_project";
+		String url = "jdbc:mysql:/localhost:3306:board_project";
 		String user = "mindae";
 		String pwd = "a123";
 
@@ -17,7 +17,7 @@ public class DBConn {
 
 			try {
 
-				Class.forName("oracle.jdbc.driver.OracleDriver");
+				Class.forName("com.mysql.jdbc.Driver");
 				conn = DriverManager.getConnection(url, user, pwd);
 
 			} catch (Exception e) {

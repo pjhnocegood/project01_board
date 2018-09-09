@@ -1,6 +1,6 @@
 package com.ediya.board.mindae;
 
-public class Member_DTO_mindae {
+public class Member_DTO_mindae {//
 	
 	private int userNo_kmk; //id
 	private String userName_kmk; //ÀÌ¸§

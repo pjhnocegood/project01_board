@@ -1,4 +1,4 @@
-package com.ediya.board.mindae;
+package com.ediya.board.mindae;//
 
 public class Board_DTO_mindae {
 	
@@ -19,7 +19,7 @@ public class Board_DTO_mindae {
 	public String getBoardSubject_kmk() {
 		return boardSubject_kmk;
 	}
-	public void setBoardDubject_kmk(String boardSubject_kmk) {
+	public void setBoardSubject_kmk(String boardSubject_kmk) {
 		this.boardSubject_kmk = boardSubject_kmk;
 	}
 	public String getBoardContent_kmk() {
