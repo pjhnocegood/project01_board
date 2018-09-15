@@ -2,7 +2,8 @@ package com.ediya.board.mindae;
 
 public class Member_DTO_mindae {//
 	
-	private int userNo_kmk; //id
+
+	private String userId_kmk;//아이디
 	private String userName_kmk; //이름
 	private String userPwd_kmk;  //패스워드
 	private String userPost_kmk; //우편번호
@@ -11,15 +12,15 @@ public class Member_DTO_mindae {//
 	private String userBirth_kmk; //생년월일
 	private String userEmail_kmk; //이메일
 	private String userSex_kmk; //성별
+	public String getUserId_kmk() {
+		return userId_kmk;
+	}
+	public void setUserId_kmk(String userId_kmk) {
+		this.userId_kmk = userId_kmk;
+	}
 	private String userDate_kmk; //가입일
 	private int userAdminNo_kmk; //관리자 권환
 	
-	public int getUserNo_kmk() {
-		return userNo_kmk;
-	}
-	public void setUserNo_kmk(int userNo_kmk) {
-		this.userNo_kmk = userNo_kmk;
-	}
 	public String getUserName_kmk() {
 		return userName_kmk;
 	}

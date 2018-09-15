@@ -8,7 +8,8 @@ public class Board_DTO_mindae {
 	private String userId_kmk; //아이디
 	private String userEmail_kmk; //이메일
 	private String boardDate_kmk; //작성일
-	private int bordCount_kmk; //조회수
+	private int boardCount_kmk; //조회수
+	private int listNum;
 	
 	public int getBoardNo_kmk() {
 		return boardNo_kmk;
@@ -46,12 +47,19 @@ public class Board_DTO_mindae {
 	public void setBoardDate_kmk(String boardDate_kmk) {
 		this.boardDate_kmk = boardDate_kmk;
 	}
-	public int getBordCount_kmk() {
-		return bordCount_kmk;
+	public int getBoardCount_kmk() {
+		return boardCount_kmk;
 	}
-	public void setBordCount_kmk(int bordCount_kmk) {
-		this.bordCount_kmk = bordCount_kmk;
+	public void setBoardCount_kmk(int boardCount_kmk) {
+		this.boardCount_kmk = boardCount_kmk;
 	}
+	public int getListNum() {
+		return listNum;
+	}
+	public void setListNum(int listNum) {
+		this.listNum = listNum;
+	}
+	
 	
 
 }

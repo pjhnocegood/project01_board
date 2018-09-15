@@ -93,8 +93,8 @@
 			<dl>
 				<dt>작성자</dt>
 				<dd>
-				      <input type="text" name="userId_kmk" size="35" maxlength="20" class="boxTF"
-				       />
+				      <input type="text" name="userId_kmk" size="35" maxlength="20" class="boxTF" 
+				      value="${sessionScope.customInfo.userId_kmk }" readonly="readonly" />
 				</dd>
 			</dl>
 		</div>
@@ -103,7 +103,8 @@
 			<dl>
 				<dt>E-Mail</dt>
 				<dd>
-				      <input type="text" name="userEmail_kmk" size="35" maxlength="50" class="boxTF" />
+				      <input type="text" name="userEmail_kmk" size="35" maxlength="50" class="boxTF" 
+				       value="${sessionScope.customInfo.userEmail_kmk }" readonly="readonly"/>
 				</dd>
 			</dl>
 		</div>
@@ -125,7 +126,7 @@
         <input type="reset" value=" 다시입력 " class="btn2" 
         onclick="document.myForm.boardSubject_kmk.focus();"/>
         <input type="button" value=" 작성취소 " class="btn2" 
-        onclick="javascript:location.href='<%=cp%>/main.jsp';"/>
+        onclick="javascript:location.href='<%=cp%>/bbs/m_list.do?pageNum=${pageNum }';"/>
 	</div>
 
     </form>
